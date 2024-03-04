@@ -1,0 +1,69 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.citycard {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    background-color: rgb(251, 237, 230);
+    /* box-shadow: .15em .15em 0 0 lightgrey; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* .citycard:first-child {
+    grid-column: 2/4;
+    grid-row: 3/5;
+}
+
+.citycard:nth-child(even).cityname {
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.citycard:nth-child(odd).cityname {
+    text-align: center;
+    background-color: rgb(244, 220, 220);
+} */
+
+.cityimage {
+    text-align: center;
+}
+
+.cityimage img {
+    margin: 1em;
+    height: 5em;
+}
+
+.cityname {
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.cityname:hover {
+    background-color: blue;
+    color: white;
+}
+
+@media (min-width: 0px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 400px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 800px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
