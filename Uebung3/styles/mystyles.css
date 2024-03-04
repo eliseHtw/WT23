@@ -1,3 +1,19 @@
+html {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    font-size: large;
+}
+
+header {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: .5%;
+    margin-bottom: 1em;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -66,4 +82,14 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+footer {
+    background-color: rgb(251, 244, 244);
+    color: black;
+    text-align: center;
+    font-size: smaller;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
 }
