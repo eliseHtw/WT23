@@ -9,6 +9,9 @@ header {
 }
 
 nav {
+    / margin-top: 3%;
+    / margin-bottom: 3%;
+    / background-color: antiquewhite;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -42,13 +45,21 @@ table {
 
 table td, table th {
     border: 1px solid black;
-    padding: 5px;
+    padding: 0.3em;
 }
 
-thead {
+table thead {
     background-color: #76B900;
     color: white;
     font-weight: bolder;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+tbody tr:hover {
+    background-color: antiquewhite;
 }
 
 footer {
