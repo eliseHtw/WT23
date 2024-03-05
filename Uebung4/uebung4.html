@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>Übung 4</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-3">Teilnehmerin Registrierung</h1>
+        <form class="row">
+            <div class="my-2 col-12 col-sm-6 col-lg-3"> <!-- oder "mb-3"-->
+                <input class="form-control" type="text" placeholder="First name" id="first" required />
+            </div>
+            <div class="my-2 col-12 col-sm-6 col-lg-3"> 
+                <input class="form-control" type="text" placeholder="Last name" id="last" required />
+            </div> 
+            <div class="my-2 col-12 col-sm-6 col-lg-3">
+                <input class="form-control" type="text" placeholder="E-Mail" id="email" required />
+            </div> 
+            <div class="my-2 col-12 col-sm-6 col-lg-3">
+                <input class="form-control" type="text" placeholder="IP-Address" id="ipaddr" required />
+            </div>
+
+            <div class="my-2 col">
+                <button type="reset" onclick="reset()" class="btn btn-secondary" style="margin-bottom: 0.5em; margin-right: .3em;">Abbrechen</button>
+                <button onclick="register()" class="btn btn-success" type="button" style="margin-bottom: 0.5em;">Registrieren</button>
+            </div>
+        </div>
+        <div id="output"></div>
+
+        <script>
+            function register() {
+
+                // Eingaben auslesen
+                console.log("Registrieren geklickt");
+                // let firstValue = document.getElementById('first').value;
+                let firstInput = document.getElementById('first');
+                let firstValue = firstInput.value;
+                let lastValue = document.getElementById('last').value;
+                let emailValue = document.querySelector('#email').value;
+                let ipaddrValue = document.querySelector('#ipaddr').value;
+                
+                // Eingaben auf Konsole ausgeben
+                console.log('firstValue : ', firstValue)
+                console.log('lastValue : ', lastValue)
+                console.log('emailValue : ', emailValue)
+                console.log('ipaddrValue : ', ipaddrValue)
+
+                // console.log("debug1")
+
+                if(firstValue == "") {
+                    // console.log("debug2")
+                    // document.getElementById('first').classList.remove(is-valid)
+                    firstInput.classList.remove("is-valid")
+                    // document.getElementById('first').classList.add(is-invalid)
+                    firstInput.classList.add("is-invalid")
+                    // console.log("debug3")
+                } else {
+                    // document.getElementById('first').classList.remove(is-invalid)
+                    // document.getElementById('first').classList.add(is-valid)
+                    firstInput.classList.remove("is-invalid")
+                    firstInput.classList.add("is-valid")
+                    // console.log("debug4")
+                }
+
+                // console.log("debug5")
+
+                let output = document.getElementById('output');
+                // console.log("output", output)
+                output.innerHTML = `
+                <h2 class="my-4" style="color: red;">Eingegebene Werte</h2>
+                <ul>
+                    <li>${firstValue}</li>
+                    <li>${lastValue}</li>
+                    <li>${emailValue}</li>
+                    <li>${ipaddrValue}</li>
+                </ul>`;
+            }
+        </script>
+    </form>
+</body>
+</html>
