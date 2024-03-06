@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Grid</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .one {
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+
+        .two {
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+        }
+
+        .three {
+            grid-column: 1;
+            grid-row: 2 / 5;
+        }
+
+        .four {
+            grid-column: 3;
+            grid-row: 3;
+        }
+
+        .five {
+            grid-column: 2;
+            grid-row: 4;
+        }
+
+        .six {
+            grid-column: 3;
+            grid-row: 4;
+        }
+
+        .orange {
+            background-color: orange;
+            opacity: 0.5;
+            border: 2px solid gray;
+            border-radius: 5px;
+            padding: 30px;
+        }
+
+        a:link {
+            color: blue;
+        }
+
+        .link {
+
+            color: green;
+        }
+
+        #navigation a.link {
+            color: red;
+        }
+
+        li a {
+            color: magenta;
+        }
+
+        #navigation li a {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="one orange">One</div>
+        <div class="two orange">Two</div>
+        <div class="three orange">Three</div>
+        <div class="four orange">Four</div>
+        <div class="five orange">Five</div>
+        <div class="six orange">Six</div>
+    </div>
+    <ul id="navigation">
+        <li><a href="startseite.html" class="link">Startseite</a></li>
+        <li><a href="unterseite.html" class="link">Unterseite</a></li>
+    </ul>
+
+</body>
+
+</html>

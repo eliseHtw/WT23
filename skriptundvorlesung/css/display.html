@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-Display</title>
+    <style>
+        div {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #ff6a3b;
+            border-radius: 5px;
+        }
+
+        ul,
+        li {
+            background-color: #ff6a3b;
+        }
+
+        div:hover~ul li {
+            display: inline;
+        }
+
+        div p {
+            display: none;
+        }
+
+        div:hover p {
+            display: block;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>display-Eigenschaft</h3>
+    <div>
+        ich bin ein &lt;div&gt;-Element und enthalte ein
+        &lt;p&gt;-Element, welches man aber nur sieht, wenn
+        man mit der Maus über mich drüber fährt. Bei mouseover
+        wird auch die untere Liste von Block zu Inline.
+        <p>
+            mich sieht man nur, wenn man mit der Maus über das
+            div fährt. Ich nehme keinen Platz weg, wenn ich
+            nicht sichtbar bin. Das sieht man an der Unterschrift unter mir.</p>
+    </div>
+    <h3>Ich zeige den Platzverbrauch an</h3>
+    <ul>
+        <li>Menü 1</li>
+        <li>Menü 1</li>
+        <li>Menü 1</li>
+    </ul>
+</body>
+
+</html>
