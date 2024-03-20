@@ -11,6 +11,11 @@ table, input {
     margin-left: 4%;
 }
 
+table {
+    width: 92%;
+    margin-bottom: 3em;
+}
+
 .bund {
     text-align: right;
     padding-right: 4%;
