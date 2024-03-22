@@ -1,0 +1,12 @@
+.form {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: white;
+    padding: 2%;
+  }
+  
+  .form mat-form-field {
+    width: 100%;
+  }
+  
