@@ -1,0 +1,41 @@
+<h1>Registrierung</h1>
+
+<div class="form">
+    <mat-form-field class="wide-width">
+        <mat-label for="user-name">username</mat-label>
+        <input matInput id="user-name" type="text" [formControl]="usernameFC" />
+        @if (usernameFC.invalid) {
+            <mat-error>{{getErrorMessageUsername()}}</mat-error>
+        }
+    </mat-form-field>
+    <br />
+    <mat-form-field class="wide-width">
+        <mat-label for="pwd">password</mat-label>
+        <input matInput id="pwd" type="password" [formControl]="passwordFC" />
+        @if (passwordFC.invalid) {
+            <mat-error>{{getErrorMessagePassword()}}</mat-error>
+        }
+    </mat-form-field>
+    <br />
+    <mat-form-field class="wide-width">
+        <mat-label for="e-mail">email</mat-label>
+        <input matInput id="e-mail" type="email" [formControl]="emailFC" />
+        @if (emailFC.invalid) {
+            <mat-error>{{getErrorMessageEmail()}}</mat-error>
+        }
+    </mat-form-field>  
+    <br />
+    <mat-form-field class="wide-width">
+        <mat-label for="role">role</mat-label>
+        <select matNativeControl id="role" [formControl]="roleFC" placeholder="role">
+            <option value="">--Rolle auswählen--</option>
+            <option value="user">user</option>
+            <option value="admin">admin</option>
+        </select>
+        @if (roleFC.invalid) {
+            <mat-error>{{getErrorMessageRole()}}</mat-error>
+        }
+    </mat-form-field>
+    <br />
+    <button mat-raised-button [disabled]="formInvalid()" (click)="register()">Registrieren</button>
+</div>
