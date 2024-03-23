@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { BackendService } from '../shared/backend.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +14,9 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+
+  bs = inject(BackendService);
+  router = inject(Router);
 
   usernameFC = new FormControl('', [Validators.required]);
   passwordFC = new FormControl('', [Validators.required, Validators.minLength(12)]);
@@ -53,6 +58,17 @@ export class RegisterComponent {
         email: this.emailFC.value!,
         role: this.roleFC.value!
       };
+
+      this.bs.registerUser(user).subscribe({
+        next: (response) =>  {
+          console.log(response),
+          this.router.navigate(['/table'])
+        },
+        error: (err) => console.log(err),
+        complete: () => console.log('user created')
+      })
+
+      
 
       console.log('user', user);
     }

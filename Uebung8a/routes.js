@@ -28,8 +28,10 @@ router.post('/login', async(req, res) => {
         let user = check.rows[0];
         let loginOk = await bcrypt.compare(password, user.password);
         if (loginOk) {
+            res.status(200);
             res.send({ message: `user ${username} logged in` });
         } else {
+            res.status(401)
             res.send({ message: 'username or password wrong' });
         }
     } else {
