@@ -108,7 +108,7 @@ router.get('/usersh/:username', async(req, res) => {
         if (result.rowCount == 1) {
             res.send(result.rows[0]);
         } else {
-            res. send({ message: "No user found with username=" + username });
+            res.send({ message: "No user found with username=" + username });
         }
     } catch (err) {
         console.log("error", err.stack);
